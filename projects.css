@@ -1,3 +1,63 @@
+/* --- Layered Project Card --- */
+.project-layer {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    margin-bottom: 2.5rem;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: box-shadow 0.3s, border 0.3s;
+}
+.project-layer:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    border: 1.5px solid #6c63ff;
+}
+.project-title h2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: 0;
+    color: #6c63ff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    letter-spacing: 1px;
+}
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.project-tech span {
+    font-size: 1rem;
+    color: #a0aec0;
+    font-weight: 500;
+}
+.project-desc p {
+    font-size: 1.08rem;
+    color: #a0aec0;
+    text-shadow: none;
+    margin: 0.2rem 0 0.2rem 0;
+}
+.project-links {
+    margin-top: 0.5rem;
+}
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #6c63ff;
+    color: #fff;
+    padding: 0.45rem 1.1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.project-link:hover {
+    background: #4834d4;
+}
 /* --- Grid Layout --- */
 .projects-section {
     min-height: 100vh;
@@ -10,10 +70,84 @@
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 200px; /* Fixed height for empty containers */
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    margin: 0 auto;
+/* Ensure .project-layer is always full width and not covered */
+.project-layer {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 2.5rem auto;
+    background: rgba(255,255,255,0.04);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2rem 2.5rem 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border: 1.5px solid rgba(255,255,255,0.09);
+    transition: box-shadow 0.3s, border 0.3s;
+    z-index: 1;
+    position: relative;
+    overflow: visible;
+}
+.project-title h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #6c63ff;
+    letter-spacing: 1px;
+    word-break: break-word;
+}
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.project-tech span {
+    font-size: 1.08rem;
+    color: #718096;
+    font-weight: 500;
+}
+.project-desc p {
+    font-size: 1.13rem;
+    color: #718096;
+    margin: 0.2rem 0 0.2rem 0;
+    line-height: 1.6;
+}
+.project-links {
+    margin-top: 0.7rem;
+}
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #6c63ff;
+    color: #fff;
+    padding: 0.45rem 1.1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.project-link:hover {
+    background: #4834d4;
+}
+@media (max-width: 900px) {
+    .project-layer {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    }
+    .project-title h2 {
+        font-size: 1.3rem;
+    }
+    .project-desc p, .project-tech span {
+        font-size: 1rem;
+    }
+}
 }
 
 /* Bento Sizing Logic */
